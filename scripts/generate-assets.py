@@ -4,12 +4,54 @@ Raw PNGs and resumable job receipts go to --out; no production assets are overwr
 """
 import argparse
 import json
+import math
 import re
+import struct
 import sys
 import time
+import zlib
 from pathlib import Path
 from urllib.parse import urlparse
 from urllib.request import Request, urlopen
+
+
+def validate_png(data):
+    """Check complete PNG chunks and checksums without an imaging dependency."""
+    if not data.startswith(b'\x89PNG\r\n\x1a\n'):
+        raise ValueError('API did not return PNG data')
+    offset = 8
+    saw_header = saw_pixels = False
+    while offset + 12 <= len(data):
+        length = struct.unpack_from('>I', data, offset)[0]
+        end = offset + 12 + length
+        if end > len(data):
+            break
+        kind = data[offset + 4:offset + 8]
+        body = data[offset + 8:end - 4]
+        checksum = struct.unpack_from('>I', data, end - 4)[0]
+        if zlib.crc32(kind + body) != checksum:
+            raise ValueError('PNG chunk checksum mismatch')
+        if not saw_header:
+            if kind != b'IHDR' or length != 13 or 0 in struct.unpack_from('>II', body):
+                raise ValueError('Invalid PNG header')
+            saw_header = True
+        if kind == b'IDAT':
+            saw_pixels = True
+        if kind == b'IEND':
+            if length != 0 or not saw_pixels or end != len(data):
+                raise ValueError('Invalid PNG end')
+            return
+        offset = end
+    raise ValueError('Truncated PNG data')
+
+
+def atomic_write(path, data):
+    temporary = path.with_name(path.name + '.part')
+    try:
+        temporary.write_bytes(data)
+        temporary.replace(path)
+    finally:
+        temporary.unlink(missing_ok=True)
 
 
 def api(base, path, payload=None):
@@ -28,8 +70,8 @@ def main():
     parser.add_argument('--only', nargs='+', help='Generate only these asset IDs')
     parser.add_argument('--timeout', type=float, default=600, help='Seconds to wait per job; receipts allow resuming')
     args = parser.parse_args()
-    if args.timeout <= 0:
-        parser.error('--timeout must be positive')
+    if not math.isfinite(args.timeout) or args.timeout <= 0:
+        parser.error('--timeout must be finite and positive')
     base = args.api_base.rstrip('/')
     parsed = urlparse(base)
     if parsed.scheme not in ('http', 'https') or not parsed.netloc or parsed.query or parsed.fragment:
@@ -53,15 +95,20 @@ def main():
                 raise ValueError(f'{name}: request changed; use a fresh --out directory')
             job_id = receipt['jobId']
             if raw_path.exists():
-                print(f'[{index}/{len(assets)}] {name}: raw image already saved', flush=True)
-                continue
+                try:
+                    validate_png(raw_path.read_bytes())
+                except ValueError:
+                    print(f'{name}: incomplete/corrupt PNG; downloading the existing job again', flush=True)
+                else:
+                    print(f'[{index}/{len(assets)}] {name}: raw image already saved', flush=True)
+                    continue
         else:
             if raw_path.exists():
                 raise ValueError(f'{raw_path} exists without a job receipt')
             job = api(base, '/v1/jobs', payload)
             job_id = job['id']
             receipt = {'apiBase': base, 'jobId': job_id, 'payload': payload}
-            receipt_path.write_text(json.dumps(receipt, ensure_ascii=False, indent=2))
+            atomic_write(receipt_path, json.dumps(receipt, ensure_ascii=False, indent=2).encode())
         if not re.fullmatch(r'[0-9a-f]{32}', job_id):
             raise ValueError('Invalid job identifier')
         print(f'[{index}/{len(assets)}] {name}: waiting for {job_id}', flush=True)
@@ -78,11 +125,10 @@ def main():
             time.sleep(2)
         with urlopen(base + '/v1/jobs/' + job_id + '/file', timeout=30) as response:
             data = response.read()
-        if not data.startswith(b'\x89PNG\r\n\x1a\n'):
-            raise ValueError(f'{name}: API did not return PNG data')
-        raw_path.write_bytes(data)
+        validate_png(data)
+        atomic_write(raw_path, data)
         receipt['result'] = {key: job.get(key) for key in ('status', 'created_at', 'finished_at')}
-        receipt_path.write_text(json.dumps(receipt, ensure_ascii=False, indent=2))
+        atomic_write(receipt_path, json.dumps(receipt, ensure_ascii=False, indent=2).encode())
         print(f'[{index}/{len(assets)}] {name}: saved {len(data):,} bytes', flush=True)
 
 

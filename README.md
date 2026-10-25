@@ -100,6 +100,23 @@ python3 -m pip install -r scripts/requirements-assets.txt
 python3 scripts/normalize-assets.py --raw out/raw --out out/normalized --only ai-chip
 ```
 
+## 运行测试
+
+使用已安装 Chrome/Chromium 与 ffmpeg 的环境，在仓库根目录执行：
+
+```bash
+npm ci --prefix scripts
+python3 -m pip install -r scripts/requirements-assets.txt
+python3 -m unittest discover -s scripts/tests -v
+node scripts/tests/browser.mjs
+```
+
+非标准安装位置可设置 `CHROME_PATH`、`FFMPEG_PATH`；测试需要 Node.js 22+ 和 Python 3.10+。
+测试使用本机模拟图像服务，不调用真实生图模型。覆盖任务恢复、损坏 PNG、色板与透明边距、
+真实 GIF 编码、离线示例、循环首尾、减少动态效果、移动端布局及全部 24 项素材下载。
+测试输出写入系统临时目录并自动清理，不覆盖示例。GitHub Actions 在 PR 和发布前自动运行；
+通过测试后才部署 Pages。自动测试不能替代对新素材或新流程图的实际美术与语义检查。
+
 ## 源码结构
 
 - `SKILL.md`：技能入口。

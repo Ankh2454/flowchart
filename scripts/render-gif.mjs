@@ -54,6 +54,7 @@ try {
     return {width:Math.ceil(vb.width),height:Math.ceil(vb.height),loop:getComputedStyle(document.documentElement).getPropertyValue('--loop').trim()};
   });
   const loopMatch = geometry.loop.match(/^([\d.]+)(ms|s)$/);
+  if (geometry.loop && !loopMatch) throw new Error('Invalid --loop CSS value; use a time such as 6000ms or 6s');
   const cssLoop = loopMatch ? Number(loopMatch[1]) * (loopMatch[2] === 's' ? 1000 : 1) : undefined;
   const loop = options.loop ?? cssLoop ?? 6000;
   if (!Number.isFinite(loop) || loop <= 0) throw new Error('Invalid --loop CSS value');
