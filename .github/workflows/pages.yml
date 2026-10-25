@@ -24,6 +24,8 @@ jobs:
           mkdir -p _site
           cp docs/index.html _site/index.html
           cp -R examples _site/examples
+          mkdir -p _site/assets
+          cp -R assets/raster _site/assets/raster
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site

@@ -1,4 +1,4 @@
 interface:
   display_name: "Flowchart · 剪纸拼贴"
-  short_description: "用具象纸艺物件、薄纸叠层与流动动画绘制流程图，导出离线 HTML、PNG 和 GIF。"
+  short_description: "使用 24 项剪纸素材与流动动画绘制流程图，导出离线 HTML、PNG 和 GIF。"
   default_prompt: "使用 $flowchart，把我的流程或系统架构绘制为剪纸拼贴动画图，保留真实分支与回流，导出 HTML、PNG 和 GIF。"

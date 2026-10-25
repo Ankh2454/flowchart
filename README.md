@@ -9,11 +9,12 @@
 ## 能做什么
 
 - 流程图、系统架构、数据流、任务管线、生命周期及技术科普图。
+- 内置 **24 项素材：8 个可编辑 SVG + 16 个透明 PNG**，覆盖基础设施、AI、安全、流程控制与协作。
 - 根据主题设计物件，保留分支、汇聚、重试和回流。
 - 交付可离线打开的单文件 HTML、PNG 及无缝循环 GIF。
 - 在同一剪纸风格内调整品牌色、字号、内容密度；参考图用于校准材质和构图。
 
-技能只专注剪纸拼贴。默认用自绘 SVG，不需要生图 API，也没有任意风格预设切换器。
+技能只专注剪纸拼贴。可以直接使用随库附带的 SVG/PNG，无需生图 API。PNG 是经模型生成与色板归一的整体插画；需要内部部件动画时使用可编辑 SVG。
 
 ## 安装
 
@@ -63,6 +64,8 @@ git clone https://github.com/Ankh2454/flowchart.git ~/.codex/skills/flowchart
 
 - [文档发布动画](https://ankh2454.github.io/flowchart/examples/publishing.html)：物件造型、两条发布分支、修改回流。
 - [异步任务动画](https://ankh2454.github.io/flowchart/examples/async-jobs.html)：技术主题、队列、Worker、存储与失败重试。
+- [完整素材库](https://ankh2454.github.io/flowchart/examples/material-library.html)：24 项素材，可按关键词或类别筛选并下载。
+- [智能问答流程](https://ankh2454.github.io/flowchart/examples/knowledge-workflow.html)：将新增素材与 SVG 流程动画组合。
 - [纸艺物件表](https://ankh2454.github.io/flowchart/examples/objects.html)：八种可改造的基础物件。
 - [风格规范](references/style-guide.md)：材质、颜色、排版和精修判断。
 
@@ -84,6 +87,18 @@ node render-gif.mjs ../examples/publishing.html ../out/publishing.gif --poster .
 
 动画必须是可定格的 CSS 动画，周期整除全局 loop。脚本会拒绝非循环、正延迟或周期不匹配的动画，
 避免悄悄导出有接缝的文件。它检查录制条件，不替代视觉检查。
+
+## 扩展生成素材
+
+16 项新增插画使用本地 `flux2-klein-4b` 模型生成，再统一色板、透明背景和 512px 画布。
+完整提示词与 seed 保存在 [素材目录](assets/raster/catalog.json)，用法见 [生成素材规范](references/raster-assets.md)。
+库内素材可以直接离线使用；只有重新生成时才需要兼容的图像服务。
+
+```bash
+python3 scripts/generate-assets.py --api-base http://127.0.0.1:8120 --out out/raw --only ai-chip
+python3 -m pip install -r scripts/requirements-assets.txt
+python3 scripts/normalize-assets.py --raw out/raw --out out/normalized --only ai-chip
+```
 
 ## 源码结构
 

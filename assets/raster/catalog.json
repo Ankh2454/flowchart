@@ -1,0 +1,333 @@
+{
+  "schemaVersion": 1,
+  "style": "paper-cut-flat",
+  "model": "flux2-klein-4b",
+  "modelSource": "mlx-community/FLUX.2-klein-4B-4bit",
+  "generation": {
+    "width": 768,
+    "height": 768,
+    "steps": 4
+  },
+  "processing": "Fixed-palette normalization, border-connected background removal, short-shadow reconstruction and centered RGBA 512px export. These are raster illustrations, not editable SVG components.",
+  "assets": [
+    {
+      "id": "cloud-service",
+      "name": "云服务",
+      "category": "基础设施",
+      "tags": [
+        "cloud",
+        "server",
+        "remote",
+        "service",
+        "云端",
+        "服务"
+      ],
+      "file": "cloud-service.png",
+      "width": 512,
+      "height": 512,
+      "prompt": "A clean flat 2D vector illustration of cloud service, designed as a node in an editorial flowchart. Precise SVG-like geometry, restrained paper-cut graphic design, not a photograph of paper.\nCOMPOSITION: One broad cloud silhouette in muted teal, a second dark teal cloud layer offset slightly behind it, and a small cream server panel at the bottom with two short dark teal horizontal slots and one small mustard indicator. No enclosing square.\nSTYLE: completely flat solid-color surfaces. Two or three thin graphic layers. Crisp clean straight edges and simple geometric curves. A tiny restrained contact shadow offset just 2 pixels right and 4 pixels down, no broad shadow. Front orthographic view, no perspective and no visible thick side faces. Simple bold silhouette, like a carefully designed SVG illustration.\nPALETTE: background uniform pale gray-green #EDF0E8; paper warm white #FFFDF4; muted teal #639E95; vermilion #E95B38; deep teal #203E43; mustard yellow #EFC64A; folded corners light gray-green #D7DDCE. ONLY these subdued colors. The background is a single uniform color with no vignette.\nFRAMING: one centered isolated object occupying about 65 percent of the square with generous clear margin on every side. Sharp and readable at 160 pixels. Absolutely no paper fibers, no material texture, no grain, no photography, no realistic lighting, no 3D rendering, no clay, no gradients, no pink, no black outline strokes, no letters, no numbers, no watermark, no border or surrounding app card.",
+      "seed": 2460
+    },
+    {
+      "id": "database",
+      "name": "数据库",
+      "category": "基础设施",
+      "tags": [
+        "database",
+        "data",
+        "storage",
+        "数据库",
+        "持久化",
+        "数据"
+      ],
+      "file": "database.png",
+      "width": 512,
+      "height": 512,
+      "prompt": "A clean flat 2D vector illustration of database, designed as a node in an editorial flowchart. Precise SVG-like geometry, restrained paper-cut graphic design, not a photograph of paper.\nCOMPOSITION: Three stacked wide flat cylindrical disks representing a database. Muted teal disk bodies, cream flat elliptical top faces, dark teal thin gaps between the disks, one small vermilion rectangular tab on the middle disk. The body faces are simple solid-color bands, not shiny cylinders.\nSTYLE: completely flat solid-color surfaces. Two or three thin graphic layers. Crisp clean straight edges and simple geometric curves. A tiny restrained contact shadow offset just 2 pixels right and 4 pixels down, no broad shadow. Front orthographic view, no perspective and no visible thick side faces. Simple bold silhouette, like a carefully designed SVG illustration.\nPALETTE: background uniform pale gray-green #EDF0E8; paper warm white #FFFDF4; muted teal #639E95; vermilion #E95B38; deep teal #203E43; mustard yellow #EFC64A; folded corners light gray-green #D7DDCE. ONLY these subdued colors. The background is a single uniform color with no vignette.\nFRAMING: one centered isolated object occupying about 65 percent of the square with generous clear margin on every side. Sharp and readable at 160 pixels. Absolutely no paper fibers, no material texture, no grain, no photography, no realistic lighting, no 3D rendering, no clay, no gradients, no pink, no black outline strokes, no letters, no numbers, no watermark, no border or surrounding app card.",
+      "seed": 2461
+    },
+    {
+      "id": "api-gateway",
+      "name": "API 网关",
+      "category": "基础设施",
+      "tags": [
+        "api",
+        "gateway",
+        "routing",
+        "interface",
+        "接口",
+        "网关",
+        "路由"
+      ],
+      "file": "api-gateway.png",
+      "width": 512,
+      "height": 512,
+      "prompt": "A clean flat 2D vector illustration of api gateway, designed as a node in an editorial flowchart. Precise SVG-like geometry, restrained paper-cut graphic design, not a photograph of paper.\nCOMPOSITION: A wide dark teal archway made of flat rectangular paper bars. One simple vermilion right-pointing arrow passes through the opening from left to right. One small mustard rectangle sits on the upper lintel. Muted teal backing offset behind the arch.\nSTYLE: completely flat solid-color surfaces. Two or three thin graphic layers. Crisp clean straight edges and simple geometric curves. A tiny restrained contact shadow offset just 2 pixels right and 4 pixels down, no broad shadow. Front orthographic view, no perspective and no visible thick side faces. Simple bold silhouette, like a carefully designed SVG illustration.\nPALETTE: background uniform pale gray-green #EDF0E8; paper warm white #FFFDF4; muted teal #639E95; vermilion #E95B38; deep teal #203E43; mustard yellow #EFC64A; folded corners light gray-green #D7DDCE. ONLY these subdued colors. The background is a single uniform color with no vignette.\nFRAMING: one centered isolated object occupying about 65 percent of the square with generous clear margin on every side. Sharp and readable at 160 pixels. Absolutely no paper fibers, no material texture, no grain, no photography, no realistic lighting, no 3D rendering, no clay, no gradients, no pink, no black outline strokes, no letters, no numbers, no watermark, no border or surrounding app card.",
+      "seed": 2462
+    },
+    {
+      "id": "ai-chip",
+      "name": "AI 处理器",
+      "category": "智能与安全",
+      "tags": [
+        "ai",
+        "model",
+        "inference",
+        "processor",
+        "智能",
+        "模型",
+        "推理",
+        "芯片"
+      ],
+      "file": "ai-chip.png",
+      "width": 512,
+      "height": 512,
+      "prompt": "A clean flat 2D vector illustration of ai chip, designed as a node in an editorial flowchart. Precise SVG-like geometry, restrained paper-cut graphic design, not a photograph of paper.\nCOMPOSITION: A dark teal square microchip with three short rectangular pins on each of its four sides. A cream square sits inside it. On the cream center a simple geometric branching network of three muted teal circular nodes connected by straight dark teal segments, with one vermilion central node. No letters and no brain illustration.\nSTYLE: completely flat solid-color surfaces. Two or three thin graphic layers. Crisp clean straight edges and simple geometric curves. A tiny restrained contact shadow offset just 2 pixels right and 4 pixels down, no broad shadow. Front orthographic view, no perspective and no visible thick side faces. Simple bold silhouette, like a carefully designed SVG illustration.\nPALETTE: background uniform pale gray-green #EDF0E8; paper warm white #FFFDF4; muted teal #639E95; vermilion #E95B38; deep teal #203E43; mustard yellow #EFC64A; folded corners light gray-green #D7DDCE. ONLY these subdued colors. The background is a single uniform color with no vignette.\nFRAMING: one centered isolated object occupying about 65 percent of the square with generous clear margin on every side. Sharp and readable at 160 pixels. Absolutely no paper fibers, no material texture, no grain, no photography, no realistic lighting, no 3D rendering, no clay, no gradients, no pink, no black outline strokes, no letters, no numbers, no watermark, no border or surrounding app card.",
+      "seed": 2463
+    },
+    {
+      "id": "secure-access",
+      "name": "权限校验",
+      "category": "智能与安全",
+      "tags": [
+        "security",
+        "access",
+        "permission",
+        "lock",
+        "权限",
+        "安全",
+        "鉴权",
+        "加密"
+      ],
+      "file": "secure-access.png",
+      "width": 512,
+      "height": 512,
+      "prompt": "A clean flat 2D vector illustration of secure access, designed as a node in an editorial flowchart. Precise SVG-like geometry, restrained paper-cut graphic design, not a photograph of paper.\nCOMPOSITION: One broad muted teal shield silhouette with a dark teal backing offset. On the shield a simple cream padlock with a dark teal U-shaped shackle and one small vermilion keyhole. Clean symmetric shield outline, no heraldry or ornament.\nSTYLE: completely flat solid-color surfaces. Two or three thin graphic layers. Crisp clean straight edges and simple geometric curves. A tiny restrained contact shadow offset just 2 pixels right and 4 pixels down, no broad shadow. Front orthographic view, no perspective and no visible thick side faces. Simple bold silhouette, like a carefully designed SVG illustration.\nPALETTE: background uniform pale gray-green #EDF0E8; paper warm white #FFFDF4; muted teal #639E95; vermilion #E95B38; deep teal #203E43; mustard yellow #EFC64A; folded corners light gray-green #D7DDCE. ONLY these subdued colors. The background is a single uniform color with no vignette.\nFRAMING: one centered isolated object occupying about 65 percent of the square with generous clear margin on every side. Sharp and readable at 160 pixels. Absolutely no paper fibers, no material texture, no grain, no photography, no realistic lighting, no 3D rendering, no clay, no gradients, no pink, no black outline strokes, no letters, no numbers, no watermark, no border or surrounding app card.",
+      "seed": 2464
+    },
+    {
+      "id": "document-search",
+      "name": "文档检索",
+      "category": "智能与安全",
+      "tags": [
+        "search",
+        "retrieval",
+        "rag",
+        "document",
+        "检索",
+        "搜索",
+        "查询"
+      ],
+      "file": "document-search.png",
+      "width": 512,
+      "height": 512,
+      "prompt": "A clean flat 2D vector illustration of document search, designed as a node in an editorial flowchart. Precise SVG-like geometry, restrained paper-cut graphic design, not a photograph of paper.\nCOMPOSITION: A cream folded-corner document with one vermilion header bar and two dark teal text marks. A large magnifying glass overlaps its lower right corner: a thick dark teal circular ring and a short mustard handle. A muted teal paper backing behind the document. No lettering.\nSTYLE: completely flat solid-color surfaces. Two or three thin graphic layers. Crisp clean straight edges and simple geometric curves. A tiny restrained contact shadow offset just 2 pixels right and 4 pixels down, no broad shadow. Front orthographic view, no perspective and no visible thick side faces. Simple bold silhouette, like a carefully designed SVG illustration.\nPALETTE: background uniform pale gray-green #EDF0E8; paper warm white #FFFDF4; muted teal #639E95; vermilion #E95B38; deep teal #203E43; mustard yellow #EFC64A; folded corners light gray-green #D7DDCE. ONLY these subdued colors. The background is a single uniform color with no vignette.\nFRAMING: one centered isolated object occupying about 65 percent of the square with generous clear margin on every side. Sharp and readable at 160 pixels. Absolutely no paper fibers, no material texture, no grain, no photography, no realistic lighting, no 3D rendering, no clay, no gradients, no pink, no black outline strokes, no letters, no numbers, no watermark, no border or surrounding app card.",
+      "seed": 2465
+    },
+    {
+      "id": "notification",
+      "name": "消息通知",
+      "category": "流程控制",
+      "tags": [
+        "notification",
+        "alert",
+        "message",
+        "bell",
+        "消息",
+        "通知",
+        "提醒"
+      ],
+      "file": "notification.png",
+      "width": 512,
+      "height": 512,
+      "prompt": "A clean flat 2D vector illustration of notification, designed as a node in an editorial flowchart. Precise SVG-like geometry, restrained paper-cut graphic design, not a photograph of paper.\nCOMPOSITION: One simple mustard yellow bell silhouette with a dark teal backing offset, a small vermilion round clapper below and a small muted teal hanging tab above. Two small dark teal cut-paper sound marks on the sides, no enclosing circle or square.\nSTYLE: completely flat solid-color surfaces. Two or three thin graphic layers. Crisp clean straight edges and simple geometric curves. A tiny restrained contact shadow offset just 2 pixels right and 4 pixels down, no broad shadow. Front orthographic view, no perspective and no visible thick side faces. Simple bold silhouette, like a carefully designed SVG illustration.\nPALETTE: background uniform pale gray-green #EDF0E8; paper warm white #FFFDF4; muted teal #639E95; vermilion #E95B38; deep teal #203E43; mustard yellow #EFC64A; folded corners light gray-green #D7DDCE. ONLY these subdued colors. The background is a single uniform color with no vignette.\nFRAMING: one centered isolated object occupying about 65 percent of the square with generous clear margin on every side. Sharp and readable at 160 pixels. Absolutely no paper fibers, no material texture, no grain, no photography, no realistic lighting, no 3D rendering, no clay, no gradients, no pink, no black outline strokes, no letters, no numbers, no watermark, no border or surrounding app card.",
+      "seed": 2466
+    },
+    {
+      "id": "scheduler",
+      "name": "定时任务",
+      "category": "流程控制",
+      "tags": [
+        "schedule",
+        "timer",
+        "clock",
+        "cron",
+        "定时",
+        "任务",
+        "时钟",
+        "调度"
+      ],
+      "file": "scheduler.png",
+      "width": 512,
+      "height": 512,
+      "prompt": "A clean flat 2D vector illustration of scheduler, designed as a node in an editorial flowchart. Precise SVG-like geometry, restrained paper-cut graphic design, not a photograph of paper.\nCOMPOSITION: One large cream clock disk on a muted teal backing disk slightly offset behind. Four short dark teal rectangular hour marks only at top right bottom left, and two thick straight dark teal hands, with a small vermilion center circle. No numbers and no thin ticks.\nSTYLE: completely flat solid-color surfaces. Two or three thin graphic layers. Crisp clean straight edges and simple geometric curves. A tiny restrained contact shadow offset just 2 pixels right and 4 pixels down, no broad shadow. Front orthographic view, no perspective and no visible thick side faces. Simple bold silhouette, like a carefully designed SVG illustration.\nPALETTE: background uniform pale gray-green #EDF0E8; paper warm white #FFFDF4; muted teal #639E95; vermilion #E95B38; deep teal #203E43; mustard yellow #EFC64A; folded corners light gray-green #D7DDCE. ONLY these subdued colors. The background is a single uniform color with no vignette.\nFRAMING: one centered isolated object occupying about 65 percent of the square with generous clear margin on every side. Sharp and readable at 160 pixels. Absolutely no paper fibers, no material texture, no grain, no photography, no realistic lighting, no 3D rendering, no clay, no gradients, no pink, no black outline strokes, no letters, no numbers, no watermark, no border or surrounding app card.",
+      "seed": 2467
+    },
+    {
+      "id": "deployment",
+      "name": "部署发布",
+      "category": "交付与协作",
+      "tags": [
+        "deploy",
+        "release",
+        "launch",
+        "rocket",
+        "部署",
+        "发布",
+        "上线"
+      ],
+      "file": "deployment.png",
+      "width": 512,
+      "height": 512,
+      "prompt": "A clean flat 2D vector illustration of deployment, designed as a node in an editorial flowchart. Precise SVG-like geometry, restrained paper-cut graphic design, not a photograph of paper.\nCOMPOSITION: One upright cream paper rocket silhouette with a triangular vermilion nose, two muted teal triangular fins, a dark teal circular porthole and a short mustard flame below. A dark teal backing layer slightly offset behind. Symmetric frontal view, no stars or space background.\nSTYLE: completely flat solid-color surfaces. Two or three thin graphic layers. Crisp clean straight edges and simple geometric curves. A tiny restrained contact shadow offset just 2 pixels right and 4 pixels down, no broad shadow. Front orthographic view, no perspective and no visible thick side faces. Simple bold silhouette, like a carefully designed SVG illustration.\nPALETTE: background uniform pale gray-green #EDF0E8; paper warm white #FFFDF4; muted teal #639E95; vermilion #E95B38; deep teal #203E43; mustard yellow #EFC64A; folded corners light gray-green #D7DDCE. ONLY these subdued colors. The background is a single uniform color with no vignette.\nFRAMING: one centered isolated object occupying about 65 percent of the square with generous clear margin on every side. Sharp and readable at 160 pixels. Absolutely no paper fibers, no material texture, no grain, no photography, no realistic lighting, no 3D rendering, no clay, no gradients, no pink, no black outline strokes, no letters, no numbers, no watermark, no border or surrounding app card.",
+      "seed": 2468,
+      "paletteSamples": [
+        {
+          "source": "9fa69b",
+          "target": "c9d1c6"
+        },
+        {
+          "source": "a0a597",
+          "target": "c9d1c6"
+        }
+      ]
+    },
+    {
+      "id": "archive",
+      "name": "归档备份",
+      "category": "交付与协作",
+      "tags": [
+        "archive",
+        "backup",
+        "box",
+        "package",
+        "归档",
+        "备份",
+        "文件",
+        "打包"
+      ],
+      "file": "archive.png",
+      "width": 512,
+      "height": 512,
+      "prompt": "A clean flat 2D vector illustration of archive, designed as a node in an editorial flowchart. Precise SVG-like geometry, restrained paper-cut graphic design, not a photograph of paper.\nCOMPOSITION: One simple muted teal archive box viewed exactly from the front. A wider flat mustard lid overlaps its top edge, a cream rectangular label slot sits on the front with a single dark teal horizontal mark, and a small vermilion paper tab protrudes from the lid. No text or perspective side face.\nSTYLE: completely flat solid-color surfaces. Two or three thin graphic layers. Crisp clean straight edges and simple geometric curves. A tiny restrained contact shadow offset just 2 pixels right and 4 pixels down, no broad shadow. Front orthographic view, no perspective and no visible thick side faces. Simple bold silhouette, like a carefully designed SVG illustration.\nPALETTE: background uniform pale gray-green #EDF0E8; paper warm white #FFFDF4; muted teal #639E95; vermilion #E95B38; deep teal #203E43; mustard yellow #EFC64A; folded corners light gray-green #D7DDCE. ONLY these subdued colors. The background is a single uniform color with no vignette.\nFRAMING: one centered isolated object occupying about 65 percent of the square with generous clear margin on every side. Sharp and readable at 160 pixels. Absolutely no paper fibers, no material texture, no grain, no photography, no realistic lighting, no 3D rendering, no clay, no gradients, no pink, no black outline strokes, no letters, no numbers, no watermark, no border or surrounding app card.",
+      "seed": 2469
+    },
+    {
+      "id": "branch",
+      "name": "条件分支",
+      "category": "流程控制",
+      "tags": [
+        "branch",
+        "decision",
+        "condition",
+        "fork",
+        "条件",
+        "分支",
+        "判断",
+        "分流"
+      ],
+      "file": "branch.png",
+      "width": 512,
+      "height": 512,
+      "prompt": "A clean flat 2D vector illustration of branch, designed as a node in an editorial flowchart. Precise SVG-like geometry, restrained paper-cut graphic design, not a photograph of paper.\nCOMPOSITION: One mustard diamond-shaped paper tile with dark teal backing offset slightly down and right. A thick dark teal path comes from the bottom center and splits into two short diagonal branches ending with arrowheads at the upper left and upper right. One small vermilion dot at the split. No other marks.\nSTYLE: completely flat solid-color surfaces. Two or three thin graphic layers. Crisp clean straight edges and simple geometric curves. A tiny restrained contact shadow offset just 2 pixels right and 4 pixels down, no broad shadow. Front orthographic view, no perspective and no visible thick side faces. Simple bold silhouette, like a carefully designed SVG illustration.\nPALETTE: background uniform pale gray-green #EDF0E8; paper warm white #FFFDF4; muted teal #639E95; vermilion #E95B38; deep teal #203E43; mustard yellow #EFC64A; folded corners light gray-green #D7DDCE. ONLY these subdued colors. The background is a single uniform color with no vignette.\nFRAMING: one centered isolated object occupying about 65 percent of the square with generous clear margin on every side. Sharp and readable at 160 pixels. Absolutely no paper fibers, no material texture, no grain, no photography, no realistic lighting, no 3D rendering, no clay, no gradients, no pink, no black outline strokes, no letters, no numbers, no watermark, no border or surrounding app card.",
+      "seed": 2470
+    },
+    {
+      "id": "retry",
+      "name": "重试回路",
+      "category": "流程控制",
+      "tags": [
+        "retry",
+        "loop",
+        "repeat",
+        "feedback",
+        "重试",
+        "回流",
+        "循环",
+        "迭代"
+      ],
+      "file": "retry.png",
+      "width": 512,
+      "height": 512,
+      "prompt": "A clean flat 2D vector illustration of retry, designed as a node in an editorial flowchart. Precise SVG-like geometry, restrained paper-cut graphic design, not a photograph of paper.\nCOMPOSITION: Two broad curved paper arrows forming an almost complete circular loop around empty space. One arrow muted teal and the other vermilion, both with clear angular arrowheads; a thin dark teal offset backing beneath each arrow. A small cream ticket floats in the center. No circular background tile.\nSTYLE: completely flat solid-color surfaces. Two or three thin graphic layers. Crisp clean straight edges and simple geometric curves. A tiny restrained contact shadow offset just 2 pixels right and 4 pixels down, no broad shadow. Front orthographic view, no perspective and no visible thick side faces. Simple bold silhouette, like a carefully designed SVG illustration.\nPALETTE: background uniform pale gray-green #EDF0E8; paper warm white #FFFDF4; muted teal #639E95; vermilion #E95B38; deep teal #203E43; mustard yellow #EFC64A; folded corners light gray-green #D7DDCE. ONLY these subdued colors. The background is a single uniform color with no vignette.\nFRAMING: one centered isolated object occupying about 65 percent of the square with generous clear margin on every side. Sharp and readable at 160 pixels. Absolutely no paper fibers, no material texture, no grain, no photography, no realistic lighting, no 3D rendering, no clay, no gradients, no pink, no black outline strokes, no letters, no numbers, no watermark, no border or surrounding app card.",
+      "seed": 2471
+    },
+    {
+      "id": "analytics",
+      "name": "数据分析",
+      "category": "智能与安全",
+      "tags": [
+        "analytics",
+        "metrics",
+        "chart",
+        "report",
+        "数据",
+        "分析",
+        "指标",
+        "报表"
+      ],
+      "file": "analytics.png",
+      "width": 512,
+      "height": 512,
+      "prompt": "A clean flat 2D vector illustration of analytics, designed as a node in an editorial flowchart. Precise SVG-like geometry, restrained paper-cut graphic design, not a photograph of paper.\nCOMPOSITION: A perfectly flat cream rectangular sheet with straight square corners on a muted teal backing. No folded corner, no curled edge. Three broad vertical bars of increasing height in muted teal, mustard and vermilion stand on a dark teal baseline. One short dark teal heading mark above. No axes numbers or labels.\nSTYLE: completely flat solid-color surfaces. Two or three thin graphic layers. Crisp clean straight edges and simple geometric curves. No cast shadows at all. Use only flat color shapes. Front orthographic view, no perspective and no visible thick side faces. Simple bold silhouette, like a carefully designed SVG illustration.\nPALETTE: background uniform pale gray-green #EDF0E8; paper warm white #FFFDF4; muted teal #639E95; vermilion #E95B38; deep teal #203E43; mustard yellow #EFC64A; folded corners light gray-green #D7DDCE. ONLY these subdued colors. The background is a single uniform color with no vignette.\nFRAMING: one centered isolated object occupying about 65 percent of the square with generous clear margin on every side. Sharp and readable at 160 pixels. Absolutely no paper fibers, no material texture, no grain, no photography, no realistic lighting, no 3D rendering, no clay, no gradients, no shadows, no pink, no black outline strokes, no letters, no numbers, no watermark, no border or surrounding app card.",
+      "seed": 2569
+    },
+    {
+      "id": "upload",
+      "name": "上传导入",
+      "category": "基础设施",
+      "tags": [
+        "upload",
+        "import",
+        "ingest",
+        "input",
+        "上传",
+        "导入",
+        "入库"
+      ],
+      "file": "upload.png",
+      "width": 512,
+      "height": 512,
+      "prompt": "A clean flat 2D vector illustration of upload, designed as a node in an editorial flowchart. Precise SVG-like geometry, restrained paper-cut graphic design, not a photograph of paper.\nCOMPOSITION: A broad muted teal open tray with a dark teal offset backing. A large vermilion arrow points upward out of the tray. A small cream folded-corner document rests behind the tray and arrow, with two short dark teal horizontal marks. No cloud.\nSTYLE: completely flat solid-color surfaces. Two or three thin graphic layers. Crisp clean straight edges and simple geometric curves. A tiny restrained contact shadow offset just 2 pixels right and 4 pixels down, no broad shadow. Front orthographic view, no perspective and no visible thick side faces. Simple bold silhouette, like a carefully designed SVG illustration.\nPALETTE: background uniform pale gray-green #EDF0E8; paper warm white #FFFDF4; muted teal #639E95; vermilion #E95B38; deep teal #203E43; mustard yellow #EFC64A; folded corners light gray-green #D7DDCE. ONLY these subdued colors. The background is a single uniform color with no vignette.\nFRAMING: one centered isolated object occupying about 65 percent of the square with generous clear margin on every side. Sharp and readable at 160 pixels. Absolutely no paper fibers, no material texture, no grain, no photography, no realistic lighting, no 3D rendering, no clay, no gradients, no pink, no black outline strokes, no letters, no numbers, no watermark, no border or surrounding app card.",
+      "seed": 2473
+    },
+    {
+      "id": "download",
+      "name": "下载导出",
+      "category": "基础设施",
+      "tags": [
+        "download",
+        "export",
+        "output",
+        "下载",
+        "导出",
+        "输出"
+      ],
+      "file": "download.png",
+      "width": 512,
+      "height": 512,
+      "prompt": "A clean flat 2D vector illustration of download, designed as a node in an editorial flowchart. Precise SVG-like geometry, restrained paper-cut graphic design, not a photograph of paper.\nCOMPOSITION: A broad muted teal open tray with a dark teal offset backing. A large mustard arrow points downward into the tray. A small cream folded-corner document sits below the arrow and behind the tray rim, with one vermilion header bar. No cloud.\nSTYLE: completely flat solid-color surfaces. Two or three thin graphic layers. Crisp clean straight edges and simple geometric curves. A tiny restrained contact shadow offset just 2 pixels right and 4 pixels down, no broad shadow. Front orthographic view, no perspective and no visible thick side faces. Simple bold silhouette, like a carefully designed SVG illustration.\nPALETTE: background uniform pale gray-green #EDF0E8; paper warm white #FFFDF4; muted teal #639E95; vermilion #E95B38; deep teal #203E43; mustard yellow #EFC64A; folded corners light gray-green #D7DDCE. ONLY these subdued colors. The background is a single uniform color with no vignette.\nFRAMING: one centered isolated object occupying about 65 percent of the square with generous clear margin on every side. Sharp and readable at 160 pixels. Absolutely no paper fibers, no material texture, no grain, no photography, no realistic lighting, no 3D rendering, no clay, no gradients, no pink, no black outline strokes, no letters, no numbers, no watermark, no border or surrounding app card.",
+      "seed": 2474
+    },
+    {
+      "id": "collaboration",
+      "name": "团队协作",
+      "category": "交付与协作",
+      "tags": [
+        "team",
+        "human",
+        "review",
+        "collaboration",
+        "人工",
+        "团队",
+        "协作",
+        "审核"
+      ],
+      "file": "collaboration.png",
+      "width": 512,
+      "height": 512,
+      "prompt": "A clean flat 2D vector illustration of collaboration, designed as a node in an editorial flowchart. Precise SVG-like geometry, restrained paper-cut graphic design, not a photograph of paper.\nCOMPOSITION: Two simple faceless paper people busts side by side, made of cream round heads and muted teal and vermilion shoulder shapes with dark teal offset backing. They hold one small cream document between them bearing two dark teal horizontal marks and a small mustard tab. Very minimal geometric silhouettes, no realistic faces or hands.\nSTYLE: completely flat solid-color surfaces. Two or three thin graphic layers. Crisp clean straight edges and simple geometric curves. A tiny restrained contact shadow offset just 2 pixels right and 4 pixels down, no broad shadow. Front orthographic view, no perspective and no visible thick side faces. Simple bold silhouette, like a carefully designed SVG illustration.\nPALETTE: background uniform pale gray-green #EDF0E8; paper warm white #FFFDF4; muted teal #639E95; vermilion #E95B38; deep teal #203E43; mustard yellow #EFC64A; folded corners light gray-green #D7DDCE. ONLY these subdued colors. The background is a single uniform color with no vignette.\nFRAMING: one centered isolated object occupying about 65 percent of the square with generous clear margin on every side. Sharp and readable at 160 pixels. Absolutely no paper fibers, no material texture, no grain, no photography, no realistic lighting, no 3D rendering, no clay, no gradients, no pink, no black outline strokes, no letters, no numbers, no watermark, no border or surrounding app card.",
+      "seed": 2475
+    }
+  ]
+}

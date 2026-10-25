@@ -4,3 +4,5 @@
 out/
 tmp/
 _site/
+__pycache__/
+*.py[cod]

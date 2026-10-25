@@ -38,13 +38,18 @@ description: 用剪纸拼贴风绘制动画流程图、架构图和技术信息�
 ## 组装与动画
 
 读取 [布局与动效](references/layout-motion.md)，按内容重新计算坐标。
-`assets/paper.css` 提供共享基准；`assets/objects.svg` 提供八种可改造的纸艺物件。
+`assets/paper.css` 提供共享基准。素材库包含 **8 个可编辑 SVG 物件 + 16 个透明 PNG 插画**。
+先查看 [素材库](examples/material-library.html)，按概念选择；PNG 的名称、标签、提示词和来源见
+`assets/raster/catalog.json`。`assets/objects.svg` 保留八种可拆分、可改造的基础物件。
+使用或扩展生图素材时读 [生成素材与处理规范](references/raster-assets.md)。
 复制用到的 CSS、defs 和 symbol 内容到最终 HTML；不能保留外部 CSS、SVG 或网络字体引用。
 完整样例见 [文档发布](examples/publishing.html)，技术主题见 [异步任务](examples/async-jobs.html)。
 
 用一个 `.canvas` 包含完整 SVG，指定数值 viewBox、`title` 和 `desc`。
 预览按钮放在画布外，标记 `data-preview-controls`。文字大小按最终展示尺寸决定。
-默认自绘 SVG；无需先询问素材来源。用户要求其他素材时遵从并核对使用许可。
+优先复用符合语义的现有素材；需要改变内部结构或动画某个部件时自绘/修改 SVG。
+PNG 是整体插画，不能直接拆出压头、纸页等图层；可搭配 SVG 连线、载荷和状态标记。
+无需先询问素材来源。用户要求生图时使用其明确提供的接口；库内素材不需要在线生成服务。
 
 动画用 CSS keyframes / offset-path，统一 `--loop:6000ms`，时长整除 loop，infinite，
 首尾状态相同。图中移动的载荷要能解释“什么在流动”；纯标注线不放载荷。
