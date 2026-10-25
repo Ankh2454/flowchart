@@ -1,0 +1,20 @@
+{
+  "name": "flowchart-scripts",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "playwright-core": "^1.49.0"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ankh2454/flowchart.git",
+    "directory": "scripts"
+  },
+  "homepage": "https://ankh2454.github.io/flowchart/",
+  "bugs": {
+    "url": "https://github.com/Ankh2454/flowchart/issues"
+  }
+}

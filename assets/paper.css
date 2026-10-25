@@ -1,0 +1,15 @@
+/* Flowchart / Paper-cut Collage — inline into the final HTML. */
+:root{--ink:#203e43;--bg:#edf0e8;--paper:#fffdf4;--orange:#e95b38;--yellow:#efc64a;--teal:#639e95;--muted:#586e6c;--return:#889b91;--loop:6000ms}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif}
+.canvas{max-width:100%;margin:auto}svg{display:block;width:100%;height:auto}svg text{fill:var(--ink)}
+.headline{font-size:46px;font-weight:650;letter-spacing:1px}.intro{font-size:17px;fill:var(--muted)}
+.node-title{font-size:24px;font-weight:650;text-anchor:middle}.node-caption{font-size:16px;fill:var(--muted);text-anchor:middle}
+.edge-label{font-size:16px;font-weight:600;text-anchor:middle}.small{font-size:14px;fill:var(--muted)}
+.route{fill:none;stroke-width:9;stroke-linecap:butt;stroke-linejoin:round}
+.ticket{offset-position:0 0;offset-rotate:auto;animation:pc-travel var(--duration,var(--loop)) linear infinite}
+@keyframes pc-travel{0%{offset-distance:0%;opacity:0}5%,91%{opacity:1}97%,100%{offset-distance:100%;opacity:0}}
+body.paused svg *{animation-play-state:paused!important}
+button:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+@media(prefers-reduced-motion:reduce){svg *{animation:none!important}.ticket{display:none}}
+@media print{[data-preview-controls]{display:none}svg *{animation:none!important}.ticket{display:none}}

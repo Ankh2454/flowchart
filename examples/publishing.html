@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>从一页草稿，到正式发布 · 剪纸拼贴流程图</title>
+<style>
+:root { color-scheme: light; --ink:#203e43; --bg:#edf0e8; --paper:#fffdf4; --orange:#e95b38; --yellow:#efc64a; --teal:#639e95; --loop:6000ms; }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--ink); font-family:"PingFang SC","Microsoft YaHei",sans-serif; }
+.canvas { width:1440px; height:1000px; margin:0 auto; }
+svg { display:block; width:100%; height:100%; }
+svg text { fill:var(--ink); }
+.headline { font-size:46px; font-weight:650; letter-spacing:1px; }
+.eyebrow { font-family:"Avenir Next",Arial,sans-serif; font-size:13px; font-weight:600; letter-spacing:3px; }
+.intro { font-size:17px; fill:#586e6c; }
+.node-title { font-size:24px; font-weight:650; text-anchor:middle; letter-spacing:1px; }
+.node-caption { font-size:16px; fill:#586e6c; text-anchor:middle; }
+.edge-label { font-size:16px; font-weight:600; text-anchor:middle; }
+.small { font-size:13px; fill:#586e6c; }
+.paper { filter:url(#paper-shadow); }
+.route { fill:none; stroke-width:10; stroke-linecap:butt; stroke-linejoin:round; }
+.ticket { offset-position:0 0; offset-rotate:auto; animation:travel var(--loop) linear infinite; }
+.ticket rect { fill:var(--paper); stroke:var(--ink); stroke-width:1.4; }
+.ticket path { stroke:var(--ink); stroke-width:1.3; }
+.draft-sheet { animation:leaf var(--loop) ease-in-out infinite; transform-origin:200px 480px; }
+.stamp { animation:stamp var(--loop) ease-in-out infinite; }
+.press-sheet { animation:print var(--loop) ease-in-out infinite; }
+.lens { animation:inspect var(--loop) ease-in-out infinite; transform-origin:844px 682px; }
+.seal { animation:seal var(--loop) ease-in-out infinite; transform-origin:1262px 507px; }
+@keyframes travel { 0% { offset-distance:0%; opacity:0; } 5% { opacity:1; } 91% { opacity:1; } 97%,100% { offset-distance:100%; opacity:0; } }
+@keyframes leaf { 0%,12%,40%,100% { transform:translateY(0) rotate(0); } 24% { transform:translateY(-5px) rotate(-1.2deg); } }
+@keyframes stamp { 0%,25%,52%,100% { transform:translateY(0); } 35%,41% { transform:translateY(12px); } }
+@keyframes print { 0%,44%,88%,100% { transform:translateY(0); } 62%,72% { transform:translateY(9px); } }
+@keyframes inspect { 0%,42%,90%,100% { transform:translate(0,0) rotate(0); } 60%,72% { transform:translate(-7px,3px) rotate(-5deg); } }
+@keyframes seal { 0%,68%,96%,100% { transform:scale(1); } 78% { transform:scale(1.06); } }
+body.paused svg * { animation-play-state:paused!important; }
+.controls { position:fixed; right:20px; bottom:18px; display:flex; align-items:center; gap:12px; padding:9px 12px; border:1px solid #cad3c7; border-radius:4px; background:#fffdf4ed; font-size:12px; color:#586e6c; }
+button { border:0; padding:7px 10px; color:var(--paper); background:var(--ink); font:inherit; cursor:pointer; border-radius:2px; }
+button:focus-visible { outline:3px solid var(--orange); outline-offset:3px; }
+body.export .controls { display:none; }
+@media(max-width:1439px) { .canvas { width:100%; height:auto; aspect-ratio:1440/1000; } }
+@media(prefers-reduced-motion:reduce) { svg * { animation:none!important; } .ticket { display:none; } }
+@media print { .controls { display:none; } svg * { animation:none!important; } .ticket { display:none; } }
+</style>
+</head>
+<body>
+<main class="canvas">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 1000" role="img" aria-labelledby="diagram-title diagram-description">
+<title id="diagram-title">从一页草稿，到正式发布</title>
+<desc id="diagram-description">剪纸拼贴风格的文档发布流程。草稿输入后进行内容校验；满足规范则自动发布，再到发布完成。需要确认时转人工复核；人工确认后发布完成，需修改时返回内容校验。所有箭头均表示文档的真实流向。</desc>
+<defs>
+  <filter id="paper-shadow" x="-25%" y="-25%" width="160%" height="165%" color-interpolation-filters="sRGB">
+    <feDropShadow dx="2" dy="4" stdDeviation="1.2" flood-color="#203e43" flood-opacity=".18"/>
+  </filter>
+  <filter id="grain" x="0" y="0" width="100%" height="100%">
+    <feTurbulence type="fractalNoise" baseFrequency=".66" numOctaves="3" stitchTiles="stitch" seed="12"/>
+    <feColorMatrix type="saturate" values="0"/>
+  </filter>
+  <marker id="orange-arrow" viewBox="0 0 20 22" refX="18" refY="11" markerWidth="20" markerHeight="22" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0 20 11 0 22 5 11Z" fill="#e95b38"/></marker>
+  <marker id="teal-arrow" viewBox="0 0 20 22" refX="18" refY="11" markerWidth="20" markerHeight="22" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0 20 11 0 22 5 11Z" fill="#639e95"/></marker>
+  <marker id="return-arrow" viewBox="0 0 18 20" refX="17" refY="10" markerWidth="18" markerHeight="20" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0 18 10 0 20 4 10Z" fill="#889b91"/></marker>
+  <g id="ticket-shape"><path d="M-12-9H7L12-4V9H-12Z" fill="#fffdf4" stroke="#203e43" stroke-width="1.2"/><path d="M7-9V-4H12M-7-2H3M-7 3H6" fill="none" stroke="#203e43" stroke-width="1.2"/></g>
+  <clipPath id="print-window"><rect x="772" y="221" width="150" height="141"/></clipPath>
+</defs>
+<rect width="1440" height="1000" fill="#edf0e8"/>
+
+<!-- Quiet editorial framing; the objects carry the style. -->
+<g aria-hidden="true">
+  <path d="M80 50H100V70H80Z" fill="#e95b38"/>
+  <path d="M96 50H101V55Z" fill="#203e43"/>
+  <text x="114" y="65" class="eyebrow">FLOWCHART / PAPER CUT</text>
+  <text x="1358" y="65" text-anchor="end" class="small">剪纸拼贴 · 文档发布流程</text>
+  <text x="78" y="132" class="headline">从一页草稿，到正式发布</text>
+  <text x="80" y="174" class="intro">让规则处理确定的事，让人判断需要斟酌的事。</text>
+  <path d="M80 208H1360" stroke="#c9d1c6"/>
+</g>
+
+<!-- Routes remain beneath all paper objects. The return is a real directed route. -->
+<g aria-label="流程连线">
+  <path id="draft-check" class="route" d="M290 463H395" stroke="#e95b38" marker-end="url(#orange-arrow)"/>
+  <path id="check-auto" class="route" d="M576 439H595C633 439 615 318 658 318H745" stroke="#e95b38" marker-end="url(#orange-arrow)"/>
+  <path id="auto-done" class="route" d="M951 318H1025Q1069 318 1069 362V399Q1069 438 1107 438H1124" stroke="#e95b38" marker-end="url(#orange-arrow)"/>
+  <path id="check-review" class="route" d="M576 490H594C638 490 611 681 669 681H747" stroke="#639e95" marker-end="url(#teal-arrow)"/>
+  <path id="review-done" class="route" d="M947 681H1025Q1069 681 1069 637V536Q1069 493 1110 493H1124" stroke="#639e95" marker-end="url(#teal-arrow)"/>
+  <path id="review-back" d="M770 727H753Q714 727 714 766V802Q714 832 684 832H375Q345 832 345 802V550Q345 521 374 521H398" class="route" stroke="#889b91" style="stroke-width:5" marker-end="url(#return-arrow)"/>
+  <g class="ticket" style="offset-path:path('M290 463H395');animation-delay:-600ms"><use href="#ticket-shape"/></g>
+  <g class="ticket" style="offset-path:path('M576 439H595C633 439 615 318 658 318H745');animation-delay:-1600ms"><use href="#ticket-shape"/></g>
+  <g class="ticket" style="offset-path:path('M951 318H1025Q1069 318 1069 362V399Q1069 438 1107 438H1124');animation-delay:-3000ms"><use href="#ticket-shape"/></g>
+  <g class="ticket" style="offset-path:path('M576 490H594C638 490 611 681 669 681H747');animation-delay:-700ms"><use href="#ticket-shape"/></g>
+  <g class="ticket" style="offset-path:path('M947 681H1025Q1069 681 1069 637V536Q1069 493 1110 493H1124');animation-delay:-3400ms"><use href="#ticket-shape"/></g>
+  <g class="ticket" style="offset-path:path('M770 727H753Q714 727 714 766V802Q714 832 684 832H375Q345 832 345 802V550Q345 521 374 521H398');animation-delay:-2300ms"><use href="#ticket-shape"/></g>
+</g>
+<g aria-label="分支条件">
+  <text x="682" y="286" class="edge-label">满足规范</text>
+  <text x="681" y="650" class="edge-label">需要确认</text>
+  <text x="1008" y="723" class="edge-label">确认发布</text>
+  <text x="529" y="866" class="edge-label" style="font-size:14px;fill:#586e6c">需修改 · 返回校验</text>
+</g>
+
+<!-- 1 · An actual pile of cut paper, not a box with an icon. -->
+<g aria-label="草稿输入">
+  <path class="paper" d="M142 395 265 382 281 539 158 552Z" fill="#639e95"/>
+  <path class="paper" d="M132 405 250 393 264 541 146 553Z" fill="#efc64a"/>
+  <g class="draft-sheet">
+    <path class="paper" d="M147 373 241 379 273 412 263 533 136 525Z" fill="#fffdf4"/>
+    <path d="M241 379 238 411 273 412Z" fill="#d7ddce"/>
+    <path d="M241 379 243 406 273 412Z" fill="#ebeee4"/>
+    <path d="M163 405 222 409 219 436 160 432Z" fill="#e95b38"/>
+    <path d="M157 454 243 460M156 466 242 472M155 478 217 482" stroke="#203e43" stroke-width="4"/>
+    <path d="M154 500 188 502" stroke="#639e95" stroke-width="6"/>
+  </g>
+  <g class="paper" transform="rotate(16 282 392)">
+    <path d="M275 367H287V465L281 480 275 465Z" fill="#203e43"/>
+    <path d="M275 367H281V465H275Z" fill="#efc64a"/>
+    <path d="M275 465H287L281 480Z" fill="#f5dbae"/>
+    <path d="M278 474H284L281 480Z" fill="#203e43"/>
+    <path d="M275 366H287V376H275Z" fill="#e95b38"/>
+  </g>
+  <text x="205" y="598" class="node-title">草稿输入</text>
+  <text x="205" y="627" class="node-caption">一份等待被看见的内容</text>
+</g>
+
+<!-- 2 · A press makes the validation action physical. -->
+<g aria-label="内容校验">
+  <path class="paper" d="M412 502H574L584 540H400Z" fill="#203e43"/>
+  <path d="M412 502H574L579 519H407Z" fill="#639e95"/>
+  <path class="paper" d="M416 481 554 476 567 518 428 526Z" fill="#fffdf4"/>
+  <path d="M435 494 481 492M440 504 486 502" stroke="#a4b9ad" stroke-width="3"/>
+  <path d="M510 496 520 504 540 486" stroke="#639e95" stroke-width="6" fill="none"/>
+  <path class="paper" d="M410 489V397Q410 378 429 378H553Q572 378 572 397V489H554V400H428V489Z" fill="#efc64a"/>
+  <path d="M554 400H563V489H554Z" fill="#c7982e"/>
+  <g class="stamp">
+    <path class="paper" d="M478 389H505V431H478Z" fill="#203e43"/>
+    <path class="paper" d="M458 355Q458 347 467 347H518Q527 347 527 355V378H458Z" fill="#e95b38"/>
+    <path d="M458 372H527V382H458Z" fill="#bd482f"/>
+    <path class="paper" d="M454 428H529L541 461H443Z" fill="#e95b38"/>
+    <path d="M443 461H541V470H443Z" fill="#203e43"/>
+  </g>
+  <text x="493" y="598" class="node-title">内容校验</text>
+  <text x="493" y="627" class="node-caption">格式、必填项与发布规则</text>
+</g>
+
+<!-- 3 · A compact paper press, with a sheet moving through its rollers. -->
+<g aria-label="自动发布">
+  <path class="paper" d="M769 260H920L944 281V356H751V281Z" fill="#639e95"/>
+  <path d="M920 260 944 281V356H921Z" fill="#417d76"/>
+  <path d="M782 276H911V289H782Z" fill="#203e43"/>
+  <g clip-path="url(#print-window)">
+    <g class="press-sheet">
+      <path class="paper" d="M796 229 891 234 888 285 793 281Z" fill="#fffdf4"/>
+      <path d="M808 246 870 249M807 258 854 260" stroke="#a4b9ad" stroke-width="4"/>
+      <path class="paper" d="M790 318H904L914 372H780Z" fill="#fffdf4"/>
+      <path d="M803 332H889" stroke="#e95b38" stroke-width="7"/>
+      <path d="M800 347H892M798 358H863" stroke="#a4b9ad" stroke-width="3"/>
+    </g>
+  </g>
+  <path class="paper" d="M765 289H928V323H765Z" fill="#efc64a"/>
+  <circle cx="786" cy="306" r="6" fill="#e95b38"/>
+  <path d="M880 306H908" stroke="#203e43" stroke-width="4"/>
+  <path d="M766 356H780V367H766ZM918 356H931V367H918Z" fill="#203e43"/>
+  <text x="848" y="411" class="node-title">自动发布</text>
+  <text x="848" y="440" class="node-caption">规则通过，即刻流转</text>
+</g>
+
+<!-- 4 · Review is represented by a page and an oversized cut-paper lens. -->
+<g aria-label="人工复核">
+  <path class="paper" d="M773 612 900 601 912 747 785 758Z" fill="#efc64a"/>
+  <path class="paper" d="M784 602 904 617 887 754 767 739Z" fill="#fffdf4"/>
+  <path d="M802 629 875 638" stroke="#203e43" stroke-width="7"/>
+  <path d="M798 648 874 657M796 661 871 670M794 674 846 681" stroke="#a4b9ad" stroke-width="4"/>
+  <path d="M791 703 834 708 831 728 788 723Z" fill="#f4c8a9"/>
+  <path d="M793 715 829 719" stroke="#e95b38" stroke-width="3"/>
+  <g class="lens">
+    <path class="paper" d="M872 699 887 685 944 741Q951 750 941 758L937 761Q931 765 925 758Z" fill="#e95b38"/>
+    <path d="M878 704 887 696 942 750 934 757Z" fill="#bf4b32"/>
+    <circle class="paper" cx="850" cy="675" r="49" fill="#203e43"/>
+    <circle cx="850" cy="675" r="36" fill="#d8e6da"/>
+    <path d="M828 658 872 664M827 670 870 676M825 682 854 686" stroke="#639e95" stroke-width="5"/>
+    <path d="M819 691 880 654" stroke="#fffdf4" stroke-opacity=".48" stroke-width="10"/>
+  </g>
+  <text x="850" y="809" class="node-title">人工复核</text>
+  <text x="850" y="838" class="node-caption">补上规则之外的判断</text>
+</g>
+
+<!-- 5 · A pinned publication and a scalloped approval seal. -->
+<g aria-label="发布完成">
+  <path class="paper" d="M1125 363 1290 369 1283 557 1118 551Z" fill="#639e95"/>
+  <path d="M1135 374 1280 379 1274 546 1128 541Z" fill="#417d76"/>
+  <path class="paper" d="M1142 383 1266 379 1271 531 1147 536Z" fill="#fffdf4"/>
+  <path class="paper" d="M1178 365 1229 363 1232 388 1181 390Z" fill="#efc64a"/>
+  <path d="M1160 405 1248 403 1249 444 1161 446Z" fill="#e95b38"/>
+  <path d="M1163 433 1182 415 1196 426 1211 412 1244 438Z" fill="#f3aa70"/>
+  <circle cx="1234" cy="416" r="6" fill="#efc64a"/>
+  <path d="M1163 462 1246 460M1164 474 1247 472M1164 486 1218 485" stroke="#a4b9ad" stroke-width="4"/>
+  <path d="M1166 513 1200 512" stroke="#203e43" stroke-width="5"/>
+  <g class="seal">
+    <path class="paper" d="M1243 522 1236 569 1254 560 1264 572 1272 525Z" fill="#e95b38"/>
+    <path class="paper" d="m1262 467 10 7 12-1 5 11 11 5-1 12 7 10-7 10 1 12-11 5-5 11-12-1-10 7-10-7-12 1-5-11-11-5 1-12-7-10 7-10-1-12 11-5 5-11 12 1Z" fill="#efc64a"/>
+    <circle cx="1262" cy="511" r="25" fill="#fffdf4"/>
+    <path d="M1248 511 1258 521 1277 501" stroke="#203e43" stroke-width="6" fill="none"/>
+  </g>
+  <text x="1206" y="617" class="node-title">发布完成</text>
+  <text x="1206" y="646" class="node-caption">内容正式与读者见面</text>
+</g>
+
+<!-- Texture is static and subtle: a material cue, not a moving noise effect. -->
+<rect width="1440" height="1000" filter="url(#grain)" opacity=".035" pointer-events="none" aria-hidden="true"/>
+<g aria-hidden="true">
+  <path d="M80 918H1360" stroke="#c9d1c6"/>
+  <path d="M80 950H109" stroke="#e95b38" stroke-width="7"/>
+  <text x="122" y="955" class="small">自动流转</text>
+  <path d="M225 950H254" stroke="#639e95" stroke-width="7"/>
+  <text x="267" y="955" class="small">人工介入</text>
+  <path d="M370 950H399" stroke="#889b91" stroke-width="4"/>
+  <text x="412" y="955" class="small">修改回流</text>
+  <text x="1360" y="955" text-anchor="end" class="small">每一张流动的小纸片，都代表一份文档。</text>
+</g>
+</svg>
+</main>
+<div class="controls" data-preview-controls><span>6 秒循环</span><button id="motion" type="button" aria-pressed="false">暂停动画</button></div>
+<script>
+const button = document.getElementById('motion');
+if (new URLSearchParams(location.search).has('export')) document.body.classList.add('export');
+const media = matchMedia('(prefers-reduced-motion: reduce)');
+function syncMotionControl() {
+  button.disabled = media.matches;
+  const paused = document.body.classList.contains('paused');
+  button.textContent = media.matches ? '已减少动态效果' : paused ? '播放动画' : '暂停动画';
+  button.setAttribute('aria-pressed', String(paused));
+}
+media.addEventListener('change', syncMotionControl);
+syncMotionControl();
+button.addEventListener('click', () => {
+  const paused = document.body.classList.toggle('paused');
+  button.setAttribute('aria-pressed', String(paused));
+  button.textContent = paused ? '播放动画' : '暂停动画';
+});
+</script>
+</body>
+</html>
