@@ -1,0 +1,16 @@
+/* Refined paper-cut palette. Inline this instead of paper.css for new diagrams. */
+:root{--ink:#243F3C;--bg:#F6F3EB;--paper:#FFFCF5;--orange:#C76749;--yellow:#D7B66C;--teal:#5B8F85;--muted:#5C7169;--return:#80938A;--loop:6000ms;
+--pc-ink:var(--ink);--pc-paper:var(--paper);--pc-back:#D9E3D9;--pc-teal:var(--teal);--pc-deep:#39766D;--pc-orange:var(--orange);--pc-yellow:var(--yellow);--pc-crease:#E9E1D0}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif}
+.canvas{max-width:100%;margin:auto}svg{display:block;width:100%;height:auto}svg text{fill:var(--ink)}
+.headline{font-size:46px;font-weight:650;letter-spacing:1px}.intro{font-size:17px;fill:var(--muted)}
+.node-title{font-size:24px;font-weight:650;text-anchor:middle}.node-caption{font-size:16px;fill:var(--muted);text-anchor:middle}
+.edge-label{font-size:16px;font-weight:600;text-anchor:middle}.small{font-size:14px;fill:var(--muted)}
+.route{fill:none;stroke-width:5;stroke-linecap:butt;stroke-linejoin:round}
+.ticket{offset-position:0 0;offset-rotate:auto;animation:pc-travel var(--duration,var(--loop)) linear infinite}
+@keyframes pc-travel{0%{offset-distance:0%;opacity:0}5%,91%{opacity:1}97%,100%{offset-distance:100%;opacity:0}}
+body.paused svg *{animation-play-state:paused!important}
+button:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+@media(prefers-reduced-motion:reduce){svg *{animation:none!important}.ticket{display:none}}
+@media print{[data-preview-controls]{display:none}svg *{animation:none!important}.ticket{display:none}}

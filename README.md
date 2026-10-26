@@ -60,6 +60,15 @@ git clone https://github.com/Ankh2454/flowchart.git ~/.codex/skills/flowchart
 
 也可将目录安装到其他支持 `SKILL.md` 的代理工具的技能路径。技能本身不要求 Codex 专属 API。
 
+## 配色与图标精修
+
+新图优先采用暖纸底、低饱和青绿和陶土橘，附带 8 个可编辑的精修 SVG 版本。
+经典 24 项素材继续保留；精修版覆盖同样的 8 类基础概念，不增加概念数量。
+
+- [三组配色与图标对照](examples/color-icon-comparison.html)：原版、仅换色、换色并改造型。
+- [精修异步任务](examples/async-jobs-refined.html)：在完整流程中检查图标、路径与动态。
+- [配色与图标规范](references/color-icons.md)：颜色分工、轮廓、光学尺寸和素材混用。
+
 ## 示例
 
 - [文档发布动画](https://ankh2454.github.io/flowchart/examples/publishing.html)：物件造型、两条发布分支、修改回流。

@@ -2,9 +2,11 @@
 
 ## 使用材料
 
-把 `assets/paper.css` 实际内联进 HTML 的 style，把 `assets/objects.svg` 中需要的
+新图把 `assets/paper-refined.css` 内联进 HTML 的 style，把 `assets/refined-objects.svg` 中需要的
 filter / symbol 复制到同一个根 SVG 的 defs。不要通过外链 use 引用文件。
 样例 HTML 已全部内联；节点名称、路径、布局按新主题重算。
+
+经典图继续使用 paper.css / objects.svg；下方固定色值示例属于经典配方，精修图改用角色变量。
 
 物件库是语汇，不是固定布局：document 文档，service 处理服务，store 存储，
 queue 队列，person 人员，gate 分流/条件，event 事件，result 输出结果。
